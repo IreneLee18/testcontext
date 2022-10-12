@@ -3,16 +3,9 @@ import { DataContext } from "./Context";
 function Add() {
   const { have, list, handleClickAdd, handleClickDelete } =
     useContext(DataContext);
-  const [l, setL] = useState([]);
-  useEffect(() => {
-    setL(list||[]);
-    console.log(list,l,'app')
-  }, [list]);
+
   return (
-    <>
-    {
-      have?
-      <>
+    <div>
       <button onClick={handleClickAdd}>加</button>
       <ul>
         { list.map((item, i) => (
@@ -26,9 +19,7 @@ function Add() {
           </li>
         ))}
       </ul>
-      </>:null
-    }
-    </>
+    </div>
   );
 }
 
